@@ -2,36 +2,55 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 2px;
-    background-color: #ccc;
+    background-color: #2c3e50;
     padding: 2px;
     border-radius: 4px;
+    position: relative;
 }
 
 .grid-cell {
     aspect-ratio: 1;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
+    background-color: #95a5a6;
+    border: 1px solid #7f8c8d;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s;
+    background-size: cover;
+    background-position: center;
 }
 
 .grid-cell:hover {
-    background-color: #e0e0e0;
+    opacity: 0.8;
 }
 
 .grid-cell.house {
-    background-color: #90EE90;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/619/619034.png');
 }
 
 .grid-cell.shop {
-    background-color: #87CEEB;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3082/3082011.png');
 }
 
 .grid-cell.factory {
-    background-color: #DDA0DD;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1902/1902255.png');
+}
+
+.grid-cell.street-horizontal {
+    background-color: #34495e;
+    background-image: linear-gradient(to right, #fff 50%, transparent 50%);
+    background-size: 20px 2px;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.grid-cell.street-vertical {
+    background-color: #34495e;
+    background-image: linear-gradient(to bottom, #fff 50%, transparent 50%);
+    background-size: 2px 20px;
+    background-repeat: repeat-y;
+    background-position: center;
 }
 
 .building-controls {
@@ -55,3 +74,18 @@
 .loading-spinner.active {
     display: block;
 }
+
+.car {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3097/3097180.png');
+    background-size: contain;
+    position: absolute;
+    transition: all 0.5s ease;
+    z-index: 100;
+}
+
+.north { transform: rotate(270deg); }
+.east { transform: rotate(0deg); }
+.south { transform: rotate(90deg); }
+.west { transform: rotate(180deg); }

@@ -1,17 +1,38 @@
+type Street = 
+ record {
+   direction: text;
+   position: record {
+               nat;
+               nat;
+             };
+ };
+type Car = 
+ record {
+   direction: text;
+   position: record {
+               nat;
+               nat;
+             };
+ };
 type Building = 
  record {
    buildingType: text;
    cost: nat;
+   orientation: text;
    position: record {
                nat;
                nat;
              };
  };
 service : {
-  addBuilding: (text, text, nat, nat) -> (bool);
+  addBuilding: (text, text, nat, nat, text) -> (bool);
   getAllBuildings: () -> (vec record {
                                 text;
                                 Building;
                               }) query;
+  getCarPosition: () -> (Car) query;
+  getStreets: () -> (vec Street) query;
+  initializeStreets: () -> ();
   removeBuilding: (text) -> (bool);
+  updateCarPosition: (nat, nat, text) -> ();
 }
