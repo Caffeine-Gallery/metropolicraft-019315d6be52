@@ -1,0 +1,57 @@
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    background-color: #ccc;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.grid-cell {
+    aspect-ratio: 1;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.grid-cell:hover {
+    background-color: #e0e0e0;
+}
+
+.grid-cell.house {
+    background-color: #90EE90;
+}
+
+.grid-cell.shop {
+    background-color: #87CEEB;
+}
+
+.grid-cell.factory {
+    background-color: #DDA0DD;
+}
+
+.building-controls {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.loading-spinner.active {
+    display: block;
+}

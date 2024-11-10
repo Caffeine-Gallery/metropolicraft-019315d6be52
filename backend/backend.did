@@ -1,0 +1,17 @@
+type Building = 
+ record {
+   buildingType: text;
+   cost: nat;
+   position: record {
+               nat;
+               nat;
+             };
+ };
+service : {
+  addBuilding: (text, text, nat, nat) -> (bool);
+  getAllBuildings: () -> (vec record {
+                                text;
+                                Building;
+                              }) query;
+  removeBuilding: (text) -> (bool);
+}
